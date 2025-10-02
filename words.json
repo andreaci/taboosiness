@@ -1,0 +1,674 @@
+{
+  "words": [
+    {
+      "id": 1,
+      "targetWord": "DEADLINE",
+      "tabooWords": ["scadenza", "traguardo", "ansia", "countdown", "notte fonda"]
+    },
+    {
+      "id": 2,
+      "targetWord": "DELIVERARE",
+      "tabooWords": ["consegnare", "finalizzare", "realizzare", "done", "project complete"]
+    },
+    {
+      "id": 3,
+      "targetWord": "ROOFTOP",
+      "tabooWords": ["terrazza", "bamba", "tetto", "skyline", "Terrazza Martini"]
+    },
+    {
+      "id": 4,
+      "targetWord": "SHARARE",
+      "tabooWords": ["inviare", "trasmettere", "condividere", "file", "WeTransfer"]
+    },
+    {
+      "id": 5,
+      "targetWord": "ROOFTOP",
+      "tabooWords": ["terrazza", "Milano", "tetto", "aperitivo", "evento"]
+    },
+    {
+      "id": 6,
+      "targetWord": "BEST-PRACTICE",
+      "tabooWords": ["riferimento", "successo", "esempio", "caso studio", "standard"]
+    },
+    {
+      "id": 7,
+      "targetWord": "PACKAGING",
+      "tabooWords": ["cartone", "imballaggio", "scatola", "confezione", "grafica"]
+    },
+    {
+      "id": 8,
+      "targetWord": "REFINEMENT",
+      "tabooWords": ["aggiustamento", "labor limae", "rifinitura", "presentazione", "miglioramento"]
+    },
+    {
+      "id": 9,
+      "targetWord": "BACKLOG",
+      "tabooWords": ["accumulo", "carico di lavoro", "lista", "smaltire", "arretrato"]
+    },
+    {
+      "id": 10,
+      "targetWord": "PENDING",
+      "tabooWords": ["arretrato", "in coda", "pendenze", "residuo", "ritardo"]
+    },
+    {
+      "id": 11,
+      "targetWord": "MEMO",
+      "tabooWords": ["messaggio", "Teams", "promemoria", "nota", "appunti"]
+    },
+    {
+      "id": 12,
+      "targetWord": "ALERT",
+      "tabooWords": ["notifica", "soglia", "messaggio", "automatico", "calendario"]
+    },
+    {
+      "id": 13,
+      "targetWord": "ALLINEAMENTO",
+      "tabooWords": ["discussione", "coordinamento", "gruppo", "fare il punto", "riunione"]
+    },
+    {
+      "id": 14,
+      "targetWord": "ANALYST",
+      "tabooWords": ["candidatura", "ruolo", "dati", "sottomesso", "consulente"]
+    },
+    {
+      "id": 15,
+      "targetWord": "APPLICATION",
+      "tabooWords": ["lavoro", "candidatura", "LinkedIn", "domanda", "cambiare"]
+    },
+    {
+      "id": 16,
+      "targetWord": "ASAP",
+      "tabooWords": ["ritardo", "ultimo minuto", "veloce", "urgente", "scadenza"]
+    },
+    {
+      "id": 17,
+      "targetWord": "AUDIT",
+      "tabooWords": ["ricerca", "revisione", "valutazione", "requisiti", "verifica"]
+    },
+    {
+      "id": 18,
+      "targetWord": "BENCHMARK",
+      "tabooWords": ["ricerca", "riferimento", "confronto", "concorrenza", "analisi"]
+    },
+    {
+      "id": 19,
+      "targetWord": "BENEFITS",
+      "tabooWords": ["vantaggi", "risorse umane", "sconti", "agevolazioni", "buoni pasto"]
+    },
+    {
+      "id": 20,
+      "targetWord": "BILLABLE",
+      "tabooWords": ["fatturabile", "consulenza", "ore lavorate", "Zucchetti", "tempo"]
+    },
+    {
+      "id": 21,
+      "targetWord": "BRAND",
+      "tabooWords": ["lusso", "marchio", "azienda", "logo", "Ferrari"]
+    },
+    {
+      "id": 22,
+      "targetWord": "BRIEF",
+      "tabooWords": ["inizio", "progetto", "traccia", "riassunto", "indicazioni"]
+    },
+    {
+      "id": 23,
+      "targetWord": "BUSINESS",
+      "tabooWords": ["ditta", "Bocconi", "economia", "soldi", "fabbrichetta"]
+    },
+    {
+      "id": 24,
+      "targetWord": "BUSINESS PLAN",
+      "tabooWords": ["piano", "lancio", "strategia", "investitori", "presentazione"]
+    },
+    {
+      "id": 25,
+      "targetWord": "CALL",
+      "tabooWords": ["chiamata", "lava", "parlare", "riunione", "Teams"]
+    },
+    {
+      "id": 26,
+      "targetWord": "CHALLENGE",
+      "tabooWords": ["sfida", "TikTok", "ostacolo", "mettere alla prova", "superare"]
+    },
+    {
+      "id": 27,
+      "targetWord": "CONSULTANT",
+      "tabooWords": ["ruolo", "nonnismo", "progetto", "strategia", "cravatta"]
+    },
+    {
+      "id": 28,
+      "targetWord": "ONBOARDING",
+      "tabooWords": ["nuovo", "orientamento", "introduzione", "accoglienza", "inizio"]
+    },
+    {
+      "id": 29,
+      "targetWord": "OUT-OF-SCOPE",
+      "tabooWords": ["perimetro", "attività", "pagare", "cliente", "progetto"]
+    },
+    {
+      "id": 30,
+      "targetWord": "FINE TUNING",
+      "tabooWords": ["finalizzare", "revisione", "messa a punto", "dettaglio", "precisione"]
+    },
+    {
+      "id": 31,
+      "targetWord": "REMINDER",
+      "tabooWords": ["promemoria", "avviso", "riunione", "Outlook", "sollecito"]
+    },
+    {
+      "id": 32,
+      "targetWord": "COWORKING",
+      "tabooWords": ["condivisione", "spazio", "ufficio", "freelance", "ping-pong"]
+    },
+    {
+      "id": 33,
+      "targetWord": "CUSTOMER JOURNEY",
+      "tabooWords": ["percorso", "cliente", "interazione", "viaggio", "esperienza"]
+    },
+    {
+      "id": 34,
+      "targetWord": "DEADLINE",
+      "tabooWords": ["tempo", "scadenza", "traguardo", "caffé", "ansia"]
+    },
+    {
+      "id": 35,
+      "targetWord": "DECISION-MAKING",
+      "tabooWords": ["processo", "scegliere", "strategia", "capo", "politica aziendale"]
+    },
+    {
+      "id": 36,
+      "targetWord": "DELIVERARE",
+      "tabooWords": ["consegnare", "presentazione", "completare", "scadenza", "cliente"]
+    },
+    {
+      "id": 37,
+      "targetWord": "DESIDERATA",
+      "tabooWords": ["aspettativa", "preferenza", "richiesta", "bisogno", "cliente"]
+    },
+    {
+      "id": 38,
+      "targetWord": "DIRECTOR",
+      "tabooWords": ["responsabilità", "guida", "persone", "Rolex", "RAL"]
+    },
+    {
+      "id": 39,
+      "targetWord": "DISCLAIMER",
+      "tabooWords": ["avvertenza", "nota", "diritto", "legale", "avviso"]
+    },
+    {
+      "id": 40,
+      "targetWord": "DISRUPTIVE",
+      "tabooWords": ["rottura", "rivoluzione", "innovativo", "Elon Musk", "dirompente"]
+    },
+    {
+      "id": 41,
+      "targetWord": "EARLY ADOPTER",
+      "tabooWords": ["iPhone", "pioniere", "primo", "Salvatore Aranzulla", "adottare"]
+    },
+    {
+      "id": 42,
+      "targetWord": "ENDORSEMENT",
+      "tabooWords": ["avallo", "supporto", "riconoscimento", "testimonial", "promozione"]
+    },
+    {
+      "id": 43,
+      "targetWord": "ENGAGEMENT",
+      "tabooWords": ["coinvolgimento", "attenzione", "pubblico", "Instagram", "campagna"]
+    },
+    {
+      "id": 44,
+      "targetWord": "FEEDBACK",
+      "tabooWords": ["valutazione", "opinione", "che schifo", "commento", "migliorare"]
+    },
+    {
+      "id": 45,
+      "targetWord": "FLESSIBILITÀ",
+      "tabooWords": ["disponibilità", "straordinari", "elasticità", "yoga", "richiesta"]
+    },
+    {
+      "id": 46,
+      "targetWord": "FOLLOW-UP",
+      "tabooWords": ["contattare", "sollecito", "aggiornamento", "ritardo", "fare"]
+    },
+    {
+      "id": 47,
+      "targetWord": "FORECAST",
+      "tabooWords": ["previsione", "stima", "numero", "aspettativa", "anno"]
+    },
+    {
+      "id": 48,
+      "targetWord": "GANTT",
+      "tabooWords": ["piano", "pianificare", "progetto", "linea temporale", "cliente"]
+    },
+    {
+      "id": 49,
+      "targetWord": "GIF",
+      "tabooWords": ["immagine", "animazione", "meme", "JPEG", "boomer"]
+    },
+    {
+      "id": 50,
+      "targetWord": "HANDOVER",
+      "tabooWords": ["passaggio", "cambiamento", "dimissioni", "collega", "collega"]
+    },
+    {
+      "id": 51,
+      "targetWord": "SOFT SKILLS",
+      "tabooWords": ["empatia", "intelligenza emotiva", "persone", "ascolto", "bisogni"]
+    },
+    {
+      "id": 52,
+      "targetWord": "HARD SKILLS",
+      "tabooWords": ["competenze", "Excel", "abilità", "tecnico", "specializzazione"]
+    },
+    {
+      "id": 53,
+      "targetWord": "IMPLEMENTAZIONE",
+      "tabooWords": ["esecuzione", "inizio", "sviluppo", "progetto", "partenza"]
+    },
+    {
+      "id": 54,
+      "targetWord": "INSIGHT",
+      "tabooWords": ["intuizione", "spunto", "analisi", "ricerca", "banalità"]
+    },
+    {
+      "id": 55,
+      "targetWord": "KICK-OFF",
+      "tabooWords": ["inizio", "partenza", "progetto", "ansia", "lancio"]
+    },
+    {
+      "id": 56,
+      "targetWord": "KPI",
+      "tabooWords": ["indicatore", "metrica", "parametro", "dato", "numero"]
+    },
+    {
+      "id": 57,
+      "targetWord": "LOOPPARE",
+      "tabooWords": ["includere", "aggiungere", "coinvolgere", "comunicazioni", "cerchio"]
+    },
+    {
+      "id": 58,
+      "targetWord": "COMMITTATO",
+      "tabooWords": ["coinvolto", "motivato", "dedicato", "proattivo", "impegnato"]
+    },
+    {
+      "id": 59,
+      "targetWord": "LOYALTY",
+      "tabooWords": ["fidelizzare", "programma", "ricorrente", "vantaggi", "cliente"]
+    },
+    {
+      "id": 60,
+      "targetWord": "MANAGER",
+      "tabooWords": ["capo", "gestione", "coglione", "frustrazione", "stronza"]
+    },
+    {
+      "id": 61,
+      "targetWord": "MEETING",
+      "tabooWords": ["riunione", "incontro", "appuntamento", "colleghi", "allineamento"]
+    },
+    {
+      "id": 62,
+      "targetWord": "MESSAGGIARE",
+      "tabooWords": ["scrivere", "Whatsapp", "digitare", "telefono", "inviato"]
+    },
+    {
+      "id": 63,
+      "targetWord": "MINDSET",
+      "tabooWords": ["approccio", "mentalità", "visione", "fuffa guru", "attitudine"]
+    },
+    {
+      "id": 64,
+      "targetWord": "MISSION",
+      "tabooWords": ["obiettivo", "mandato", "valori", "identità", "scopo"]
+    },
+    {
+      "id": 65,
+      "targetWord": "NETWORK",
+      "tabooWords": ["rete", "evento", "contatti", "persone", "relazioni"]
+    },
+    {
+      "id": 66,
+      "targetWord": "NETWORKING",
+      "tabooWords": ["connessioni", "rete", "evento", "visibilità", "conoscenze"]
+    },
+    {
+      "id": 67,
+      "targetWord": "NEXT STEPS",
+      "tabooWords": ["passi", "passaggi", "mosse", "azioni", "futuro"]
+    },
+    {
+      "id": 68,
+      "targetWord": "ONE-TO-ONE",
+      "tabooWords": ["colloquio", "capo", "paura", "aumento", "confronto"]
+    },
+    {
+      "id": 69,
+      "targetWord": "PERFORMANCE",
+      "tabooWords": ["gara", "rendimento", "prestazione", "risultato", "RedBull"]
+    },
+    {
+      "id": 70,
+      "targetWord": "PINGARE",
+      "tabooWords": ["avvisare", "sollecitare", "scrivere", "messaggio", "Teams"]
+    },
+    {
+      "id": 71,
+      "targetWord": "PIVOT",
+      "tabooWords": ["cambiamento", "Excel", "strategia", "tabella", "fulcro"]
+    },
+    {
+      "id": 72,
+      "targetWord": "PLAN",
+      "tabooWords": ["piano", "programma", "strategia", "percorso", "evoluzione"]
+    },
+    {
+      "id": 73,
+      "targetWord": "PLANNING",
+      "tabooWords": ["riunione", "pianificazione", "agenda", "progetto", "confronto"]
+    },
+    {
+      "id": 74,
+      "targetWord": "PROSPECT",
+      "tabooWords": ["contatto", "potenzialità", "cliente", "opportunità", "nuovo"]
+    },
+    {
+      "id": 75,
+      "targetWord": "REBRANDING",
+      "tabooWords": ["trasformazione", "azienda", "logo", "cambiamento", "immagine"]
+    },
+    {
+      "id": 76,
+      "targetWord": "RECAP",
+      "tabooWords": ["sintesi", "riepilogo", "punto", "riunione", "fare"]
+    },
+    {
+      "id": 77,
+      "targetWord": "REPORT",
+      "tabooWords": ["documento", "analisi", "Word", "pdf", "scrivere"]
+    },
+    {
+      "id": 78,
+      "targetWord": "RESILIENZA",
+      "tabooWords": ["resistenza", "adattamento", "flessibilità", "crisi", "reazione"]
+    },
+    {
+      "id": 79,
+      "targetWord": "ROADMAP",
+      "tabooWords": ["strumento", "piano", "programma", "strategia", "futuro"]
+    },
+    {
+      "id": 80,
+      "targetWord": "SHARARE",
+      "tabooWords": ["schermo", "condividere", "inviare", "documento", "Teams"]
+    },
+    {
+      "id": 81,
+      "targetWord": "SLIDE",
+      "tabooWords": ["presentazione", "documento", "pagina", "grafico", "PowerPoint"]
+    },
+    {
+      "id": 82,
+      "targetWord": "DECK",
+      "tabooWords": ["presentazione", "documento", "supporto", "rapporto", "pacchetto"]
+    },
+    {
+      "id": 83,
+      "targetWord": "SMART WORKING",
+      "tabooWords": ["telelavoro", "Italia", "remoto", "casa", "pigiama"]
+    },
+    {
+      "id": 84,
+      "targetWord": "BALLPARK",
+      "tabooWords": ["preventivo", "indicazione", "stima", "proposta", "numero"]
+    },
+    {
+      "id": 85,
+      "targetWord": "STAKEHOLDER",
+      "tabooWords": ["interlocutori", "azionisti", "persone", "fornitori", "clienti"]
+    },
+    {
+      "id": 86,
+      "targetWord": "STOCK",
+      "tabooWords": ["inventario", "magazzino", "azioni", "rischio", "Apple"]
+    },
+    {
+      "id": 87,
+      "targetWord": "STORYTELLING",
+      "tabooWords": ["narrativa", "descrizione", "raccontare", "comunicazione", "pubblicità"]
+    },
+    {
+      "id": 88,
+      "targetWord": "TARGET",
+      "tabooWords": ["obiettivo", "scopo", "cliente", "riferimento", "bersaglio"]
+    },
+    {
+      "id": 89,
+      "targetWord": "TASK",
+      "tabooWords": ["compito", "attività", "lista", "lavoro", "terminare"]
+    },
+    {
+      "id": 90,
+      "targetWord": "TBD (TO BE DEFINED)",
+      "tabooWords": ["ambiguità", "definire", "decidere", "riunione", "incertezza"]
+    },
+    {
+      "id": 91,
+      "targetWord": "TEAM",
+      "tabooWords": ["squadra", "gruppo", "capo", "persone", "aperitivo"]
+    },
+    {
+      "id": 92,
+      "targetWord": "TOOL",
+      "tabooWords": ["strumento", "supporto", "utile", "cosa", "mezzo"]
+    },
+    {
+      "id": 93,
+      "targetWord": "TOPIC",
+      "tabooWords": ["argomento", "tema", "questione", "contenuto", "riunione"]
+    },
+    {
+      "id": 94,
+      "targetWord": "UPDATE",
+      "tabooWords": ["aggiornamento", "confronto", "resoconto", "sintesi", "progressi"]
+    },
+    {
+      "id": 95,
+      "targetWord": "VALORI",
+      "tabooWords": ["principi", "comportamento", "etica", "cultura", "azienda"]
+    },
+    {
+      "id": 96,
+      "targetWord": "VALUE PROPOSITION",
+      "tabooWords": ["valore", "beneficio", "bisogno", "promessa", "cliente"]
+    },
+    {
+      "id": 97,
+      "targetWord": "VISION",
+      "tabooWords": ["visione", "aspirazione", "idea", "futuro", "Elon Musk"]
+    },
+    {
+      "id": 98,
+      "targetWord": "WIN-WIN",
+      "tabooWords": ["accordo", "vincitore", "successo", "reciprocità", "felicità"]
+    },
+    {
+      "id": 99,
+      "targetWord": "WORKFLOW",
+      "tabooWords": ["processo", "procedura", "flusso", "automazione", "operatività"]
+    },
+    {
+      "id": 100,
+      "targetWord": "FUFFA GURU",
+      "tabooWords": ["chiacchierone", "venditore", "LinkedIn", "fumo", "Marco Montemagno"]
+    },
+    {
+      "id": 101,
+      "targetWord": "FYI (FOR YOUR INFORMATION)",
+      "tabooWords": ["messaggio", "informazione", "conoscenza", "segnalare", "notifica"]
+    },
+    {
+      "id": 102,
+      "targetWord": "DEPLOYARE",
+      "tabooWords": ["rilasciare", "pubblicare", "mettere online", "attivare", "implementare"]
+    },
+    {
+      "id": 103,
+      "targetWord": "SYNC",
+      "tabooWords": ["sincronizzare", "allineare", "coordinare", "aggiornare", "unificare"]
+    },
+    {
+      "id": 104,
+      "targetWord": "SCALABILITY",
+      "tabooWords": ["scalabilità", "crescita", "espansione", "adattamento", "flessibilità"]
+    },
+    {
+      "id": 105,
+      "targetWord": "BOOSTARE",
+      "tabooWords": ["aumentare", "migliorare", "potenziare", "incrementare", "accrescere"]
+    },
+    {
+      "id": 106,
+      "targetWord": "LEVERAGE",
+      "tabooWords": ["sfruttare", "utilizzare", "approfittare", "vantaggio", "opportunità"]
+    },
+    {
+      "id": 107,
+      "targetWord": "PIVOTARE",
+      "tabooWords": ["cambiare", "girare", "ruotare", "modificare", "trasformare"]
+    },
+    {
+      "id": 108,
+      "targetWord": "BANDWIDTH",
+      "tabooWords": ["capacità", "risorse", "tempo", "disponibilità", "limite"]
+    },
+    {
+      "id": 109,
+      "targetWord": "OFFBOARDING",
+      "tabooWords": ["uscita", "dimissioni", "conclusione", "chiusura", "separazione"]
+    },
+    {
+      "id": 110,
+      "targetWord": "SPRINT",
+      "tabooWords": ["corsa", "velocità", "scadenza", "periodo", "iterazione"]
+    },
+    {
+      "id": 111,
+      "targetWord": "RETROSPECTIVE",
+      "tabooWords": ["riflessione", "analisi", "valutazione", "riunione", "feedback"]
+    },
+    {
+      "id": 112,
+      "targetWord": "STAKEHOLDER",
+      "tabooWords": ["interessato", "parte", "attore", "soggetto", "coinvolto"]
+    },
+    {
+      "id": 113,
+      "targetWord": "BENCHMARKING",
+      "tabooWords": ["confronto", "riferimento", "standard", "misura", "valutazione"]
+    },
+    {
+      "id": 114,
+      "targetWord": "OUTSOURCING",
+      "tabooWords": ["esternalizzazione", "delega", "affidamento", "terzi", "esterno"]
+    },
+    {
+      "id": 115,
+      "targetWord": "INHOUSE",
+      "tabooWords": ["interno", "interno", "aziendale", "proprio", "diretto"]
+    },
+    {
+      "id": 116,
+      "targetWord": "CROSSFUNCTIONAL",
+      "tabooWords": ["multidisciplinare", "interfunzionale", "trasversale", "integrato", "collaborativo"]
+    },
+    {
+      "id": 117,
+      "targetWord": "AGILE",
+      "tabooWords": ["veloce", "flessibile", "adattivo", "snello", "dinamico"]
+    },
+    {
+      "id": 118,
+      "targetWord": "SCRUM",
+      "tabooWords": ["metodologia", "framework", "processo", "iterativo", "sprint"]
+    },
+    {
+      "id": 119,
+      "targetWord": "KANBAN",
+      "tabooWords": ["board", "lavagna", "visuale", "flusso", "colonne"]
+    },
+    {
+      "id": 120,
+      "targetWord": "LEAN",
+      "tabooWords": ["magro", "snello", "efficiente", "ottimizzato", "eliminare"]
+    },
+    {
+      "id": 121,
+      "targetWord": "SALES",
+      "tabooWords": ["vendite", "commerciale", "venditore", "acquisti", "fatturato"]
+    },
+    {
+      "id": 122,
+      "targetWord": "CALENDAR",
+      "tabooWords": ["appuntamento", "riunione", "memo", "evento", "calendario"]
+    },
+    {
+      "id": 123,
+      "targetWord": "AI",
+      "tabooWords": ["intelligenza", "artificiale", "robot", "algoritmo", "macchina"]
+    },
+    {
+      "id": 124,
+      "targetWord": "CIRCLE BACK",
+      "tabooWords": ["tornare", "ritornare", "riprendere", "discutere", "parlare"]
+    },
+    {
+      "id": 125,
+      "targetWord": "DISRUPTING",
+      "tabooWords": ["sconvolgere", "rivoluzionare", "cambiare", "innovare", "trasformare"]
+    },
+    {
+      "id": 126,
+      "targetWord": "CLOUD",
+      "tabooWords": ["nuvola", "server", "online", "remoto", "digitale"]
+    },
+    {
+      "id": 127,
+      "targetWord": "SYNERGY",
+      "tabooWords": ["sinergia", "collaborazione", "cooperazione", "unione", "combinazione"]
+    },
+    {
+      "id": 128,
+      "targetWord": "TAKE THIS OFFLINE",
+      "tabooWords": ["parlare", "discutere", "fuori", "riunione", "privato"]
+    },
+    {
+      "id": 129,
+      "targetWord": "BREAK",
+      "tabooWords": ["pausa", "interruzione", "stop", "fermare", "rompere"]
+    },
+    {
+      "id": 130,
+      "targetWord": "FORWARDA",
+      "tabooWords": ["inviare", "trasmettere", "mandare", "inoltrare", "passare"]
+    },
+    {
+      "id": 131,
+      "targetWord": "BOOKARE",
+      "tabooWords": ["prenotare", "riservare", "appuntamento", "prenotazione", "calendario"]
+    },
+    {
+      "id": 132,
+      "targetWord": "DOWNLOADARE",
+      "tabooWords": ["scaricare", "prelevare", "bajare", "trasferire", "salvare"]
+    },
+    {
+      "id": 133,
+      "targetWord": "UPLOADARE",
+      "tabooWords": ["caricare", "inviare", "trasferire", "pubblicare", "condividere"]
+    },
+    {
+      "id": 134,
+      "targetWord": "IMPRUVARE",
+      "tabooWords": ["migliorare", "perfezionare", "ottimizzare", "aggiornare", "potenziare"]
+    }
+  ]
+}
