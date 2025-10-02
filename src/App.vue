@@ -37,6 +37,28 @@
         </div>
       </div>
       
+      <div class="timer-setting">
+        <label>Timer (secondi):</label>
+        <div class="timer-options">
+          <button 
+            @click="setTimerDuration(0)"
+            :class="['timer-btn', { active: initialTimerSeconds === 0 }]"
+          >
+            <div class="timer-icon">🚫</div>
+            <div class="timer-text">Disabilitato</div>
+          </button>
+          <button 
+            v-for="seconds in [15, 30, 45, 60]" 
+            :key="seconds"
+            @click="setTimerDuration(seconds)"
+            :class="['timer-btn', { active: initialTimerSeconds === seconds }]"
+          >
+            <div class="timer-icon">⏱️</div>
+            <div class="timer-text">{{ seconds }}s</div>
+          </button>
+        </div>
+      </div>
+      
       <button 
         class="btn" 
         @click="startGame" 
@@ -48,8 +70,18 @@
     
     <!-- Game -->
     <div v-else-if="gameState === 'playing'">
-      <div class="current-player">
-        Turno di: {{ currentPlayer.name }}
+      <div class="current-player" :class="{ 'timer-critical': isTimerCritical }">
+        <div class="player-info">
+          <div class="player-name">Turno di: {{ currentPlayer.name }}</div>
+          <div class="cards-progress">
+            Carte indovinate: {{ cardsGuessedThisTurn }}/{{ cardsPerTurn }}
+            <span class="cards-skipped"> • Saltate: {{ cardsNotGuessed }}</span>
+          </div>
+        </div>
+        <div v-if="initialTimerSeconds > 0" class="timer-container">
+          <div class="timer-display">{{ formatTime(timeLeft) }}</div>
+          <div class="timer-label">Tempo rimanente</div>
+        </div>
       </div>
       
       <div class="scoreboard">
@@ -69,7 +101,7 @@
           <div class="countdown-number">{{ countdown }}</div>
           <div class="countdown-text">Preparati...</div>
         </div>
-        <div class="game-card" :class="{ 'card-blurred': isCardBlurred }">
+        <div class="game-card" :class="{ 'card-blurred': isCardBlurred, 'card-flash': isCardFlashing }">
           <div class="target-word">{{ currentCard.targetWord }}</div>
           <div class="taboo-words">
             <span 
@@ -86,7 +118,7 @@
       <div class="game-controls">
         <button class="btn btn-secondary btn-square" @click="correctGuess" :disabled="isCardBlurred">
           <div class="btn-icon">✅</div>
-          <div class="btn-text">Parola Indovinata (+1)</div>
+          <div class="btn-text">Parola Indovinata (+10)</div>
         </button>
         <button class="btn btn-danger btn-square" @click="tabooWordMentioned" :disabled="isCardBlurred">
           <div class="btn-icon">❌</div>
@@ -96,7 +128,7 @@
           <div class="btn-icon">⏭️</div>
           <div class="btn-text">Prossimo Turno</div>
         </button>
-        <button class="btn btn-square" @click="newCard" :disabled="isCardBlurred">
+        <button class="btn btn-square" @click="skipCard" :disabled="isCardBlurred">
           <div class="btn-icon">🎴</div>
           <div class="btn-text">Nuova Carta</div>
         </button>
@@ -121,7 +153,21 @@
               senza usare le parole taboo mostrate sopra. Gli altri giocatori devono indovinare la parola.
             </p>
             <p>
-              Clicca "Parola Indovinata" per +1 punto, "Parola Taboo" per -1 punto.
+              <strong>🎯 Turni:</strong> Ogni team deve indovinare <strong>3 carte</strong> prima che tocchi al team successivo.
+            </p>
+            <p>
+              Clicca "Parola Indovinata" per +10 punti, "Parola Taboo" per -1 punto.
+            </p>
+            <p>
+              <strong>⏱️ Timer:</strong> Se abilitato, ogni turno ha un tempo limite. Quando il tempo scade:
+            </p>
+            <ul>
+              <li><strong>Prima volta:</strong> -2 punti, timer si riavvia con metà tempo</li>
+              <li><strong>Seconda volta:</strong> -4 punti, timer si riavvia con 1/4 del tempo</li>
+              <li><strong>Volte successive:</strong> -4 punti, timer continua con 1/4 del tempo</li>
+            </ul>
+            <p>
+              <strong>🚨 Attenzione:</strong> Quando il timer è critico (ultima fase), la barra del turno diventa rossa e lampeggia!
             </p>
           </div>
         </div>
@@ -174,7 +220,17 @@ export default {
       isCardBlurred: false,
       countdown: 5,
       countdownInterval: null,
-      showHelpDialog: false
+      showHelpDialog: false,
+      isCardFlashing: false,
+      // Timer settings
+      initialTimerSeconds: 30, // x seconds - can be configured, default 30
+      timeLeft: 60,
+      timerInterval: null,
+      timerPhase: 1, // 1, 2, or 3
+      // Turn management
+      cardsGuessedThisTurn: 0,
+      cardsPerTurn: 3,
+      cardsNotGuessed: 0
     }
   },
   computed: {
@@ -183,6 +239,10 @@ export default {
     },
     currentPlayer() {
       return this.players[this.currentPlayerIndex]
+    },
+    isTimerCritical() {
+      // Critical when timer is in phase 3 (x/4 seconds) or when time is very low
+      return this.timerPhase >= 3 || (this.initialTimerSeconds > 0 && this.timeLeft <= Math.floor(this.initialTimerSeconds / 4))
     },
     winner() {
       return this.players.reduce((prev, current) => 
@@ -205,12 +265,16 @@ export default {
       const count = parseInt(this.playerCount)
       this.players = Array.from({ length: count }, (_, i) => ({
         name: this.players[i]?.name || '',
-        score: 0
+        score: 50
       }))
     },
     selectPlayerCount(count) {
       this.playerCount = count.toString()
       this.updatePlayerInputs()
+    },
+    setTimerDuration(seconds) {
+      this.initialTimerSeconds = seconds
+      this.timeLeft = seconds
     },
     validatePlayers() {
       // This method is called on input to ensure real-time validation
@@ -221,6 +285,8 @@ export default {
       this.gameState = 'playing'
       this.currentPlayerIndex = 0
       this.usedCards.clear()
+      this.cardsGuessedThisTurn = 0
+      this.cardsNotGuessed = 0
       this.newCard()
     },
     newCard() {
@@ -228,6 +294,9 @@ export default {
         alert('Nessuna carta disponibile!')
         return
       }
+      
+      // Clear any existing intervals before starting new card
+      this.clearAllIntervals()
       
       // Get a random card that hasn't been used
       let availableCards = this.words.filter(word => !this.usedCards.has(word.id))
@@ -255,11 +324,113 @@ export default {
           this.isCardBlurred = false
           clearInterval(this.countdownInterval)
           this.countdownInterval = null
+          // Start the turn timer after card is revealed
+          this.startTurnTimer()
         }
       }, 1000)
     },
+    startTurnTimer() {
+      // Don't start timer if disabled
+      if (this.initialTimerSeconds === 0) {
+        return
+      }
+      
+      // Reset timer for new turn
+      this.timerPhase = 1
+      this.timeLeft = this.initialTimerSeconds
+      
+      this.timerInterval = setInterval(() => {
+        this.timeLeft--
+        
+        if (this.timeLeft <= 0) {
+          this.handleTimerExpired()
+        }
+      }, 1000)
+    },
+    handleTimerExpired() {
+      clearInterval(this.timerInterval)
+      
+      // Flash the card when timer expires
+      this.flashCard()
+      
+      if (this.timerPhase === 1) {
+        // First timeout: -2 points, restart with x/2 seconds
+        this.currentPlayer.score -= 2
+        this.timerPhase = 2
+        this.timeLeft = Math.floor(this.initialTimerSeconds / 2)
+        this.timerInterval = setInterval(() => {
+          this.timeLeft--
+          if (this.timeLeft <= 0) {
+            this.handleTimerExpired()
+          }
+        }, 1000)
+      } else if (this.timerPhase === 2) {
+        // Second timeout: -4 points, restart with x/4 seconds
+        this.currentPlayer.score -= 4
+        this.timerPhase = 3
+        this.timeLeft = Math.floor(this.initialTimerSeconds / 4)
+        this.timerInterval = setInterval(() => {
+          this.timeLeft--
+          if (this.timeLeft <= 0) {
+            this.handleTimerExpired()
+          }
+        }, 1000)
+      } else {
+        // Third timeout: -4 points, restart with x/4 seconds (continues)
+        this.currentPlayer.score -= 4
+        this.timeLeft = Math.floor(this.initialTimerSeconds / 4)
+        this.timerInterval = setInterval(() => {
+          this.timeLeft--
+          if (this.timeLeft <= 0) {
+            this.handleTimerExpired()
+          }
+        }, 1000)
+      }
+    },
+    stopTurnTimer() {
+      if (this.timerInterval) {
+        clearInterval(this.timerInterval)
+        this.timerInterval = null
+      }
+    },
+    formatTime(seconds) {
+      const mins = Math.floor(seconds / 60)
+      const secs = seconds % 60
+      return `${mins}:${secs.toString().padStart(2, '0')}`
+    },
+    flashCard() {
+      this.isCardFlashing = true
+      setTimeout(() => {
+        this.isCardFlashing = false
+      }, 500) // Flash for 500ms
+    },
+    clearAllIntervals() {
+      if (this.countdownInterval) {
+        clearInterval(this.countdownInterval)
+        this.countdownInterval = null
+      }
+      if (this.timerInterval) {
+        clearInterval(this.timerInterval)
+        this.timerInterval = null
+      }
+    },
+    skipCard() {
+      this.cardsNotGuessed++
+      this.stopTurnTimer()
+      this.newCard()
+    },
     correctGuess() {
-      this.currentPlayer.score += 1
+      this.currentPlayer.score += 10
+      this.cardsGuessedThisTurn++
+      this.stopTurnTimer()
+      
+      // Check if team has guessed 3 cards
+      if (this.cardsGuessedThisTurn >= this.cardsPerTurn) {
+        // Turn complete, move to next team
+        this.cardsGuessedThisTurn = 0
+        this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length
+      }
+      
       this.newCard()
     },
     tabooWordMentioned() {
@@ -267,23 +438,27 @@ export default {
       // Don't change the card - let the player try again with the same word
     },
     nextTurn() {
+      this.stopTurnTimer()
+      this.cardsGuessedThisTurn = 0
       this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length
       this.newCard()
     },
     resetGame() {
       this.gameState = 'setup'
       this.players.forEach(player => {
-        player.score = 0
+        player.score = 50
       })
       this.currentPlayerIndex = 0
       this.currentCard = null
       this.usedCards.clear()
       this.isCardBlurred = false
       this.countdown = 5
-      if (this.countdownInterval) {
-        clearInterval(this.countdownInterval)
-        this.countdownInterval = null
-      }
+      this.timeLeft = this.initialTimerSeconds
+      this.timerPhase = 1
+      this.cardsGuessedThisTurn = 0
+      this.cardsNotGuessed = 0
+      
+      this.clearAllIntervals()
     }
   }
 }

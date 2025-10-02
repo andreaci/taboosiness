@@ -71,6 +71,65 @@ h2 {
   flex-wrap: wrap;
 }
 
+.timer-setting {
+  margin-bottom: 30px;
+}
+
+.timer-setting label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+}
+
+.timer-options {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.timer-btn {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timer-btn:hover {
+  border-color: #ff6b35;
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.2);
+  transform: translateY(-2px);
+}
+
+.timer-btn.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  border-color: #ff6b35;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.timer-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.timer-text {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .player-count-btn {
   background: #ffffff;
   border: 2px solid #e2e8f0;
@@ -265,6 +324,10 @@ h2 {
   transition: filter 0.3s ease;
 }
 
+.card-flash {
+  animation: cardFlash 0.5s ease-in-out;
+}
+
 .countdown-overlay {
   position: absolute;
   top: 0;
@@ -323,6 +386,30 @@ h2 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes criticalPulse {
+  from {
+    box-shadow: 0 4px 20px rgba(248, 113, 113, 0.3);
+  }
+  to {
+    box-shadow: 0 6px 25px rgba(248, 113, 113, 0.5);
+  }
+}
+
+@keyframes cardFlash {
+  0% {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    box-shadow: 0 8px 32px rgba(248, 113, 113, 0.4);
+  }
+  100% {
+    background: #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -413,13 +500,68 @@ h2 {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 20px;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  text-align: center;
   border: 2px solid #e2e8f0;
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.current-player.timer-critical {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-color: #f87171;
+  box-shadow: 0 4px 20px rgba(248, 113, 113, 0.3);
+  animation: criticalPulse 1s ease-in-out infinite alternate;
+}
+
+.player-info {
+  flex: 1;
+  text-align: left;
+}
+
+.player-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.cards-progress {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a5568;
+  opacity: 0.9;
+}
+
+.cards-skipped {
+  color: #e53e3e;
+  font-weight: 700;
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+}
+
+.timer-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ff6b35;
+  font-family: 'Courier New', monospace;
+  line-height: 1;
+}
+
+.timer-label {
+  font-size: 12px;
+  color: #4a5568;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
 }
 
 .scoreboard {
@@ -601,6 +743,17 @@ h2 {
   margin-bottom: 15px;
 }
 
+.dialog-content ul {
+  margin: 10px 0 15px 20px;
+  padding: 0;
+}
+
+.dialog-content li {
+  color: #4a5568;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
 .dialog-content p:last-child {
   margin-bottom: 0;
 }
@@ -653,6 +806,23 @@ h2 {
     gap: 10px;
   }
   
+  .timer-options {
+    gap: 8px;
+  }
+  
+  .timer-btn {
+    min-width: 70px;
+    padding: 10px 12px;
+  }
+  
+  .timer-icon {
+    font-size: 16px;
+  }
+  
+  .timer-text {
+    font-size: 11px;
+  }
+  
   .player-count-btn {
     width: 60px;
     height: 60px;
@@ -675,6 +845,32 @@ h2 {
   
   .player-input {
     padding: 15px;
+  }
+  
+  .current-player {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .player-info {
+    text-align: center;
+  }
+  
+  .player-name {
+    font-size: 18px;
+  }
+  
+  .cards-progress {
+    font-size: 13px;
+  }
+  
+  .timer-container {
+    min-width: auto;
+  }
+  
+  .timer-display {
+    font-size: 1.5rem;
   }
   
   .game-controls {
